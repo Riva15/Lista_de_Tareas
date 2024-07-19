@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="15dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4E036E">
+
+        <TextView
+            android:id="@+id/tb_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            android:text="MI LISTA DE TAREAS"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:id="@+id/rlAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:layout_below="@id/tbTask" >
+
+        <EditText
+            android:id="@+id/etAddTask"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Añade una tarea"
+            android:backgroundTint="#FF0000"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/btnAddTask"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnAddTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/buttonstyle"
+            android:text="Añadir"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlAddTask"
+        android:layout_marginTop="8dp"/>
+</RelativeLayout>
